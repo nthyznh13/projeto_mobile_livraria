@@ -27,11 +27,11 @@ export default function TabTwoScreen() {
           style={{
             fontFamily: Fonts.rounded,
           }}>
-          Livraria
+          Meus Livros
         </ThemedText>
       </ThemedView>
-      <ThemedText>seus livros no carrinho.</ThemedText>
-      <Collapsible title="Nada pode me ferir!">
+      <ThemedText>Desmarcar tudo</ThemedText>
+      <Collapsible title="Nada pode me ferir">
         <ThemedText>
           Preço{' '}
           <ThemedText type="defaultSemiBold">R$</ThemedText> 
@@ -39,58 +39,61 @@ export default function TabTwoScreen() {
         </ThemedText>
         <ThemedText>
           2x  <ThemedText type="defaultSemiBold">sem </ThemedText>{' '}
-        sem juros.
+        sem juros
         </ThemedText>
         <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">excluir de sua lista</ThemedText>
+          <ThemedText type="link">Learn more</ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="A Arte da Guerra.">
+      <Collapsible title="Android, iOS, and web support">
         <ThemedText>
-          R$49,90 {' '}
-          <ThemedText type="defaultSemiBold">2x</ThemedText> sem juros no pix.
+          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
+          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
         </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">excluir de sua lista</ThemedText>
-        </ExternalLink>
       </Collapsible>
-      <Collapsible title="O livro dos 5 anéis.">
+      <Collapsible title="Images">
         <ThemedText>
-          R$32,99 <ThemedText type="defaultSemiBold">2x sem juros</ThemedText> no pix.{' '}
-          <ThemedText type="defaultSemiBold"></ThemedText>
+          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
+          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
+          different screen densities
         </ThemedText>
         <Image
           source={require('@/assets/images/react-logo.png')}
           style={{ width: 100, height: 100, alignSelf: 'center' }}
         />
         <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">excluir de sua lista</ThemedText>
+          <ThemedText type="link">Learn more</ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="O ego é seu inimigo.">
+      <Collapsible title="Light and dark mode components">
         <ThemedText>
-          R$45,99{' '}
-          <ThemedText type="defaultSemiBold">3x</ThemedText> sem juros
-        no pix.
+          This template has light and dark mode support. The{' '}
+          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
+          what the user&apos;s current color scheme is, and so you can adjust UI colors accordingly.
         </ThemedText>
         <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">excluir de sua lista</ThemedText>
+          <ThemedText type="link">Learn more</ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Poder e Manipulação.">
+      <Collapsible title="Animations">
         <ThemedText>
-          R$35,99{' '}
-          <ThemedText type="defaultSemiBold">sem juros</ThemedText> no pix.
-        {' '}
+          This template includes an example of an animated component. The{' '}
+          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
+          the powerful{' '}
           <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
-          
+            react-native-reanimated
           </ThemedText>{' '}
+<<<<<<< HEAD
           </ThemedText>
           
         
       </Collapsible>
       
       <Collapsible title={'Como fazer amigos e influenciar pessoas.'}>
+=======
+          library to create a waving hand animation.
+        </ThemedText>
+>>>>>>> 5434a948081603f5d6bfe0f63c7e8d8756b836f2
         {Platform.select({
           ios: (
             <ThemedText>
