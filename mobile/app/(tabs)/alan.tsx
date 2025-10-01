@@ -90,7 +90,7 @@ export default function TabTwoScreen() {
         
       </Collapsible>
       
-      <Collapsible title={'camundongo'}>
+      <Collapsible title={'Como fazer amigos e influenciar pessoas.'}>
         {Platform.select({
           ios: (
             <ThemedText>
