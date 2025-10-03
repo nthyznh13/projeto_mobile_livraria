@@ -1,6 +1,5 @@
 import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
-
 import { Collapsible } from '@/components/ui/collapsible';
 import { ExternalLink } from '@/components/external-link';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
@@ -27,35 +26,35 @@ export default function TabTwoScreen() {
           style={{
             fontFamily: Fonts.rounded,
           }}>
-          Meus Livros
+          Livraria bookstore
         </ThemedText>
       </ThemedView>
-      <ThemedText>Desmarcar tudo</ThemedText>
-      <Collapsible title="Nada pode me ferir">
+      <ThemedText>Seu Carrinho:</ThemedText>
+      <Collapsible title="Nada pode me ferir!">
         <ThemedText>
-          Preço{' '}
-          <ThemedText type="defaultSemiBold">R$</ThemedText> 
-          <ThemedText type="defaultSemiBold">39,60</ThemedText>
+          Escrito pelo: David Goggins{' '}
+          <ThemedText type="defaultSemiBold">R$39,90</ThemedText>{' '}
+          <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
         <ThemedText>
-          2x  <ThemedText type="defaultSemiBold">sem </ThemedText>{' '}
-        sem juros
+          <ThemedText type="defaultSemiBold">2x sem</ThemedText>{' '}
+          juros.
         </ThemedText>
         <ExternalLink href="https://docs.expo.dev/router/introduction">
           <ThemedText type="link">Learn more</ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
+      <Collapsible title="Livro a Arte da Guerra.">
         <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
+          R$36,99{' '}
+          <ThemedText type="defaultSemiBold">2x</ThemedText> sem juros.
         </ThemedText>
       </Collapsible>
-      <Collapsible title="Images">
+      <Collapsible title="O livro dos 5 anéis.">
         <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
+          R$40,99 <ThemedText type="defaultSemiBold">2x</ThemedText>{' '}
+          <ThemedText type="defaultSemiBold">sem</ThemedText> juros.
+        
         </ThemedText>
         <Image
           source={require('@/assets/images/react-logo.png')}
@@ -83,17 +82,8 @@ export default function TabTwoScreen() {
           <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
             react-native-reanimated
           </ThemedText>{' '}
-<<<<<<< HEAD
-          </ThemedText>
-          
-        
-      </Collapsible>
-      
-      <Collapsible title={'Como fazer amigos e influenciar pessoas.'}>
-=======
           library to create a waving hand animation.
         </ThemedText>
->>>>>>> 5434a948081603f5d6bfe0f63c7e8d8756b836f2
         {Platform.select({
           ios: (
             <ThemedText>
@@ -119,4 +109,3 @@ const styles = StyleSheet.create({
     gap: 8,
   },
 });
-
