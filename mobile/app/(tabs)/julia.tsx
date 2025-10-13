@@ -12,7 +12,7 @@ export default function BookPurchaseScreen() {
 
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#F5D3DC', dark: '#3C2A33' }}
+      headerBackgroundColor={{ light: '#A8DADC', dark: '#457B9D' }} // azul pastel claro e um pouco mais escuro para dark mode
       headerImage={
         <Image
           source={require('@/assets/images/logo-livraria.png')}
@@ -35,7 +35,7 @@ export default function BookPurchaseScreen() {
         </ThemedText>
 
         <View style={styles.buttonContainer}>
-          <Button title="Comprar" onPress={handleBuy} color="#E91E63" />
+          <Button title="Comprar" onPress={handleBuy} color="#89CFF0" /> {/* Azul pastel */}
         </View>
       </ThemedView>
     </ParallaxScrollView>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   price: {
     fontSize: 20,
-    color: '#E91E63',
+    color: '#89CFF0', // azul pastel
   },
   buttonContainer: {
     marginTop: 16,
