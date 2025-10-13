@@ -1,104 +1,69 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet, Button, Alert, View } from 'react-native';
 
-import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
 
-export default function HomeScreen() {
+export default function BookPurchaseScreen() {
+  const handleBuy = () => {
+    Alert.alert('Compra realizada', 'Obrigado por comprar "Teoricamente Amor"!');
+  };
+
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerBackgroundColor={{ light: '#F5D3DC', dark: '#3C2A33' }}
       headerImage={
         <Image
           source={require('@/assets/images/logo-livraria.png')}
           style={styles.reactLogo}
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">BookStore</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Name</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Username</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+      }
+    >
+      <ThemedView style={styles.container}>
+        <ThemedText type="title">Teoricamente Amor</ThemedText>
+        <ThemedText type="subtitle">Ali Hazelwood</ThemedText>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
+        <ThemedText style={styles.description}>
+          Elsie Hannaway é uma física teórica — e também uma falsa namorada nas horas vagas.
+          Mas seu mundo desmorona quando ela descobre que o irmão da cliente é um professor
+          super rígido que pode acabar com sua carreira. Uma comédia romântica divertida e nerd!
         </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Email</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
+
+        <ThemedText type="defaultSemiBold" style={styles.price}>
+          R$ 59,90
         </ThemedText>
+
+        <View style={styles.buttonContainer}>
+          <Button title="Comprar" onPress={handleBuy} color="#E91E63" />
+        </View>
       </ThemedView>
     </ParallaxScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  container: {
+    gap: 12,
+    padding: 16,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  description: {
+    fontSize: 16,
+    lineHeight: 24,
+  },
+  price: {
+    fontSize: 20,
+    color: '#E91E63',
+  },
+  buttonContainer: {
+    marginTop: 16,
+    alignSelf: 'stretch',
   },
   reactLogo: {
     height: 178,
     width: 290,
-    bottom: 0,
-    // Centralização Horizontal:
-    // Remove 'left: 0' e adiciona 'alignSelf: 'center'' para centralizar
-    // ou usa 'left: '50%', transform: [{ translateX: -145 }]' (metade do width)
-    // Usaremos `alignSelf: 'center'` pois é a solução mais limpa em React Native
-    // para centralização horizontal quando o componente pai usa `flex`.
-    // O ParallaxScrollView (ou o container de headerImage) provavelmente usa flex.
-    alignSelf: 'center', 
+    alignSelf: 'center',
     position: 'absolute',
+    bottom: 0,
   },
 });
