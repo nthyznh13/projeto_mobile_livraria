@@ -30,63 +30,65 @@ export default function TabTwoScreen() {
         </ThemedText>
       </ThemedView>
       <ThemedText>inicio da compra</ThemedText>
-      <Collapsible title="File-based routing">
+      <Collapsible title=" compra ">
         <ThemedText>
           você comprou 1 livro{' '}
-          <ThemedText type="defaultSemiBold">livro: meu pequeno principe</ThemedText>{' '}
-          <ThemedText type="defaultSemiBold"> por R$ 29,00.</ThemedText>
+          <ThemedText type="defaultSemiBold">livro: nada pode me ferir</ThemedText>{' '}
+          <ThemedText type="defaultSemiBold"> por R$ 29,90.</ThemedText>
         </ThemedText>
         <ThemedText>
-          . <ThemedText type="defaultSemiBold">.</ThemedText>{' '}
-          .
+           <ThemedText type="defaultSemiBold"></ThemedText>{' '}
+          
         </ThemedText>
         <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">.</ThemedText>
+          <ThemedText type="link"></ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
+      <Collapsible title="endereço de sua residencia e entrega ">
         <ThemedText>
-          .{' '}
-          <ThemedText type="defaultSemiBold">.</ThemedText> .
+          Rua ourizona 1350, data de entrega: 15/10
+          <ThemedText type="defaultSemiBold"></ThemedText> 
         </ThemedText>
       </Collapsible>
-      <Collapsible title="Images">
+      <Collapsible title="o livro ">
         <ThemedText>
-          .. <ThemedText type="defaultSemiBold">.</ThemedText> . {' '}
-          <ThemedText type="defaultSemiBold">.</ThemedText> ..
+           <ThemedText type="defaultSemiBold"></ThemedText>  
+          <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
         <Image
-          source={require('@/assets/images/react-logo.png')}
+          source={require('@/assets/images/shopping 3.png')}
           style={{ width: 100, height: 100, alignSelf: 'center' }}
         />
         <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">...</ThemedText>
+          <ThemedText type="link"></ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Light and dark mode components">
+      <Collapsible title="descrição do livro">
         <ThemedText>
-          ...{' '}
-          <ThemedText type="defaultSemiBold">....</ThemedText>...
+        A história de superação do único homem a completar o treinamento das forças de elite e se tornar Navy SEAL, Army Ranger e TACP,
+         A infância de David Goggins foi um pesadelo.
+          Pobreza, racismo e maus-tratos físicos marcaram seus dias, assombraram suas noites e quase determinaram seu futuro.
+          <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
         <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">;.</ThemedText>
+          <ThemedText type="link"></ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Animations">
+      <Collapsible title="agradecimentos">
         <ThemedText>
-          ...{' '}
-          <ThemedText type="defaultSemiBold">...</ThemedText> ;,,,
+          {' '}
+          <ThemedText type="defaultSemiBold">um agradecimento ao nosso cliente : gabriel ricardo</ThemedText> 
           {' '}
           <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
-            ..
+            
           </ThemedText>{' '}
-          ...
+          Muito obrigado por comprar na nossa loja.
         </ThemedText>
         {Platform.select({
           ios: (
             <ThemedText>
-              ... <ThemedText type="defaultSemiBold">...</ThemedText>{' '}
-              ...
+             <ThemedText type="defaultSemiBold">seu porduto esta entregue</ThemedText>{' '}
+              
             </ThemedText>
           ),
         })}
