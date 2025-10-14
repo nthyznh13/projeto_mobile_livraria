@@ -1,5 +1,6 @@
 import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
+
 import { Collapsible } from '@/components/ui/collapsible';
 import { ExternalLink } from '@/components/external-link';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
@@ -11,15 +12,13 @@ import { Fonts } from '@/constants/theme';
 export default function TabTwoScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
-        />
-      }>
+ headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+ headerImage={
+ <Image
+ source={require('@/assets/images/logo-livraria.png')}
+ style={styles.image}
+ />
+ }>
       <ThemedView style={styles.titleContainer}>
         <ThemedText
           type="title"
@@ -29,60 +28,47 @@ export default function TabTwoScreen() {
           Livraria bookstore
         </ThemedText>
       </ThemedView>
-      <ThemedText>Seu Carrinho:</ThemedText>
+      <ThemedText>Meu Carrinho:</ThemedText>
+      <Collapsible title="Meus Livros">
       <Collapsible title="Nada pode me ferir!">
-        <ThemedText>
-          Escrito pelo: David Goggins{' '}
-          <ThemedText type="defaultSemiBold">R$39,90</ThemedText>{' '}
-          <ThemedText type="defaultSemiBold"></ThemedText>
-        </ThemedText>
-        <ThemedText>
-          <ThemedText type="defaultSemiBold">2x sem</ThemedText>{' '}
-          juros.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Livro a Arte da Guerra.">
-        <ThemedText>
-          R$36,99{' '}
-          <ThemedText type="defaultSemiBold">2x</ThemedText> sem juros.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="O livro dos 5 anéis.">
-        <ThemedText>
-          R$40,99 <ThemedText type="defaultSemiBold">2x</ThemedText>{' '}
-          <ThemedText type="defaultSemiBold">sem</ThemedText> juros.
-        
-        </ThemedText>
-        <Image
-          source={require('@/assets/images/react-logo.png')}
-          style={{ width: 100, height: 100, alignSelf: 'center' }}
-        />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user&apos;s current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
+  <ThemedText>Autor: David Goggins</ThemedText>
+  <ThemedText type="defaultSemiBold">R$39,90</ThemedText>
+  <ThemedText>2x sem juros</ThemedText>
+  <ExternalLink href="https://exemplo.com/remover-nada-pode-me-ferir">
+    <ThemedText type="link">Excluir da lista</ThemedText>
+  </ExternalLink>
+</Collapsible>
+
+<Collapsible title="A Arte da Guerra">
+  <ThemedText>Autor: Sun Tzu</ThemedText>
+  <ThemedText type="defaultSemiBold">R$36,99</ThemedText>
+  <ThemedText>2x sem juros</ThemedText>
+  <ExternalLink href="https://exemplo.com/remover-arte-da-guerra">
+    <ThemedText type="link">Excluir da lista</ThemedText>
+  </ExternalLink>
+</Collapsible>
+
+<Collapsible title="O Livro dos Cinco Anéis">
+  <ThemedText>Autor: Miyamoto Musashi</ThemedText>
+  <ThemedText type="defaultSemiBold">R$40,99</ThemedText>
+  <ThemedText>2x sem juros</ThemedText>
+  <ExternalLink href="https://exemplo.com/remover-5-aneis">
+    <ThemedText type="link">Excluir da lista</ThemedText>
+  </ExternalLink>
+</Collapsible>
+
         <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
+          <ThemedText type="link">learn more</ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Animations">
+      <Collapsible title="Livros Excluidos">
         <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful{' '}
+          aprenda ser programador em 5 minutos.{' '}
+          <ThemedText type="defaultSemiBold"></ThemedText>{' '}
           <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
-            react-native-reanimated
+            
           </ThemedText>{' '}
-          library to create a waving hand animation.
+          
         </ThemedText>
         {Platform.select({
           ios: (
@@ -108,4 +94,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 8,
   },
+  image: {
+    height: 178,
+    width: 290,
+    bottom: 0,
+    alignSelf: 'center', 
+    position: 'absolute',
+  }
 });
