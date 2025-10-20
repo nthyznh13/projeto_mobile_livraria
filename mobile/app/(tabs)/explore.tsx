@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { Platform, StyleSheet, TextInput } from 'react-native';
 
 import { Collapsible } from '@/components/ui/collapsible';
 import { ExternalLink } from '@/components/external-link';
@@ -50,7 +50,7 @@ export default function TabTwoScreen() {
 
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
+      headerBackgroundColor={{ light: '#6b6b6bff', dark: '#393a3aff' }}
       headerImage={
         <Image
                  source={require('@/assets/images/logo-livraria.png')}
@@ -69,6 +69,10 @@ export default function TabTwoScreen() {
       <ThemedText style={{ fontFamily: 'Oswald' }}>
         Aqui voce encontra todo tipo de livro✅
       </ThemedText>
+       <TextInput
+                style={styles.input}
+                placeholder="Pesquisar" 
+              />
 
       {/* Grid de livros */}
       <ThemedText
@@ -97,7 +101,7 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
+    color: '#c2c2c2ff',
     bottom: -90,
     left: -35,
     position: 'absolute',
@@ -115,10 +119,10 @@ const styles = StyleSheet.create({
   },
   bookItem: {
     width: '47%',
-    backgroundColor: '#fff',
+    backgroundColor: '#f0e9e9ff',
     padding: 10,
     borderRadius: 8,
-    shadowColor: '#000',
+    shadowColor: '#ffffffff',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
@@ -140,12 +144,12 @@ const styles = StyleSheet.create({
   bookAuthor: {
     fontFamily: 'Oswald',
     fontSize: 12,
-    color: '#666',
+    color: '#424141ff',
   },
   bookPrice: {
     fontFamily: 'Oswald',
     fontSize: 14,
-    color: '#000',
+    color: '#161515ff',
     marginTop: 4,
   },
   image: {
@@ -155,4 +159,13 @@ const styles = StyleSheet.create({
     alignSelf: 'center', 
     position: 'absolute',
   },
+  input: {
+ height: 40,
+ borderWidth: 1,
+ padding: 10,
+ borderRadius: 5,
+ borderColor: '#ccc',
+ backgroundColor: '#fff',
+ color: '#000', 
+ },
 });
