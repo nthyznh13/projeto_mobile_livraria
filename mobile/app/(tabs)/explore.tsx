@@ -7,95 +7,94 @@ import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Fonts } from '@/constants/theme';
 
 export default function TabTwoScreen() {
+  const books = [
+    {
+      title: 'Verity',
+      author: 'Colleen Hoover',
+      price: '68,90',
+      image: require('@/assets/images/verity.png'),
+    },
+    {
+      title: 'Tempestade de Ônix',
+      author: 'Rebecca Yarros',
+      price: '59,64',
+      image: require('@/assets/images/tempestade.png'),
+    },
+    {
+      title: 'Amor Teoricamente',
+      author: 'Ali Hazelwood',
+      price: '54,90',
+      image: require('@/assets/images/amor-teoricamente.png'),
+    },
+    {
+      title: 'A Empregada',
+      author: 'Freida McFadden',
+      price: '41,53',
+      image: require('@/assets/images/a-empregada.png'),
+    },
+    {
+      title: 'Assistente do Vilão',
+      author: 'Hannah Nicole',
+      price: '47,45',
+      image: require('@/assets/images/assistente-vilao.png'),
+    },
+    {
+      title: 'A Biblioteca da Meia-Noite',
+      author: 'Matt Haig',
+      price: '38,50',
+      image: require('@/assets/images/biblioteca-meia-noite.png'),
+    },
+  ];
+
   return (
     <ParallaxScrollView
-    headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-    headerImage={
-      <IconSymbol
-        size={310}
-        color="#808080"
-        name="chevron.left.forwardslash.chevron.right"
-        style={styles.headerImage}
-      />
-    }>
-    <ThemedView style={styles.titleContainer}>
+      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
+      headerImage={
+        <IconSymbol
+          size={310}
+          color="#808080"
+          name="chevron.left.forwardslash.chevron.right"
+          style={styles.headerImage}
+        />
+      }>
+      <ThemedView style={styles.titleContainer}>
+        <ThemedText
+          type="title"
+          style={{
+            fontFamily: 'Oswald',
+          }}>
+          Explore
+        </ThemedText>
+      </ThemedView>
+      <ThemedText style={{ fontFamily: 'Oswald' }}>
+        This app includes example code to help you get started.
+      </ThemedText>
+
+      {/* Grid de livros */}
       <ThemedText
         type="title"
         style={{
-          fontFamily: 'Oswald', // Fonte alterada aqui
+          fontFamily: 'Oswald',
+          marginTop: 20,
+          marginBottom: 10,
         }}>
-        Explore
+        Livros em Destaque
       </ThemedText>
-    </ThemedView>
-    <ThemedText style={{ fontFamily: 'Oswald' }}>This app includes example code to help you get started.</ThemedText>
-    <Collapsible title="File-based routing">
-      <ThemedText style={{ fontFamily: 'Oswald' }}>
-        This app has two screens:{' '}
-        <ThemedText type="defaultSemiBold" style={{ fontFamily: 'Oswald' }}>app/(tabs)/index.tsx</ThemedText> and{' '}
-        <ThemedText type="defaultSemiBold" style={{ fontFamily: 'Oswald' }}>app/(tabs)/explore.tsx</ThemedText>
-      </ThemedText>
-      <ThemedText style={{ fontFamily: 'Oswald' }}>
-        The layout file in <ThemedText type="defaultSemiBold" style={{ fontFamily: 'Oswald' }}>app/(tabs)/_layout.tsx</ThemedText>{' '}
-        sets up the tab navigator.
-      </ThemedText>
-      <ExternalLink href="https://docs.expo.dev/router/introduction">
-        <ThemedText type="link" style={{ fontFamily: 'Oswald' }}>Learn more</ThemedText>
-      </ExternalLink>
-    </Collapsible>
-    <Collapsible title="Android, iOS, and web support">
-      <ThemedText style={{ fontFamily: 'Oswald' }}>
-        You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-        <ThemedText type="defaultSemiBold" style={{ fontFamily: 'Oswald' }}>w</ThemedText> in the terminal running this project.
-      </ThemedText>
-    </Collapsible>
-    <Collapsible title="Images">
-      <ThemedText style={{ fontFamily: 'Oswald' }}>
-        For static images, you can use the <ThemedText type="defaultSemiBold" style={{ fontFamily: 'Oswald' }}>@2x</ThemedText> and{' '}
-        <ThemedText type="defaultSemiBold" style={{ fontFamily: 'Oswald' }}>@3x</ThemedText> suffixes to provide files for
-        different screen densities
-      </ThemedText>
-      <Image
-        source={require('@/assets/images/logo-livraria.png')}
-        style={{ width: 100, height: 100, alignSelf: 'center' }}
-      />
-      <ExternalLink href="https://reactnative.dev/docs/images">
-        <ThemedText type="link" style={{ fontFamily: 'Oswald' }}>Learn more</ThemedText>
-      </ExternalLink>
-    </Collapsible>
-    <Collapsible title="Light and dark mode components">
-      <ThemedText style={{ fontFamily: 'Oswald' }}>
-        This template has light and dark mode support. The{' '}
-        <ThemedText type="defaultSemiBold" style={{ fontFamily: 'Oswald' }}>useColorScheme()</ThemedText> hook lets you inspect
-        what the user&apos;s current color scheme is, and so you can adjust UI colors accordingly.
-      </ThemedText>
-      <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-        <ThemedText type="link" style={{ fontFamily: 'Oswald' }}>Learn more</ThemedText>
-      </ExternalLink>
-    </Collapsible>
-    <Collapsible title="Animations">
-      <ThemedText style={{ fontFamily: 'Oswald' }}>
-        This template includes an example of an animated component. The{' '}
-        <ThemedText type="defaultSemiBold" style={{ fontFamily: 'Oswald' }}>components/HelloWave.tsx</ThemedText> component uses
-        the powerful{' '}
-        <ThemedText type="defaultSemiBold" style={{ fontFamily: 'Oswald', }}>
-          react-native-reanimated
-        </ThemedText>{' '}
-        library to create a waving hand animation.
-      </ThemedText>
-      {Platform.select({
-        ios: (
-          <ThemedText style={{ fontFamily: 'Oswald' }}>
-            The <ThemedText type="defaultSemiBold" style={{ fontFamily: 'Oswald' }}>components/ParallaxScrollView.tsx</ThemedText>{' '}
-            component provides a parallax effect for the header image.
-          </ThemedText>
-        ),
-      })}
-    </Collapsible>
-  </ParallaxScrollView>
-);
+
+      <ThemedView style={styles.bookGrid}>
+        {books.map((book, index) => (
+          <ThemedView key={index} style={styles.bookItem}>
+            <Image source={book.image} style={styles.bookImage} />
+            <ThemedText style={styles.bookTitle}>{book.title}</ThemedText>
+            <ThemedText style={styles.bookAuthor}>{book.author}</ThemedText>
+            <ThemedText style={styles.bookPrice}>R$ {book.price}</ThemedText>
+          </ThemedView>
+        ))}
+      </ThemedView>
+    </ParallaxScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -108,5 +107,47 @@ const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
     gap: 8,
+  },
+  bookGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    gap: 16,
+    marginTop: 10,
+  },
+  bookItem: {
+    width: '47%',
+    backgroundColor: '#fff',
+    padding: 10,
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  bookImage: {
+    width: '100%',
+    height: 160,
+    resizeMode: 'cover',
+    borderRadius: 4,
+    marginBottom: 8,
+  },
+  bookTitle: {
+    fontFamily: 'Oswald',
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginBottom: 2,
+  },
+  bookAuthor: {
+    fontFamily: 'Oswald',
+    fontSize: 12,
+    color: '#666',
+  },
+  bookPrice: {
+    fontFamily: 'Oswald',
+    fontSize: 14,
+    color: '#000',
+    marginTop: 4,
   },
 });
