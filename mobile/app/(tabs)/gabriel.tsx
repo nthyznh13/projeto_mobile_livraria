@@ -28,7 +28,7 @@ export default function TabTwoScreen() {
         </ThemedText>
       </ThemedView>
       <ThemedText>inicio da compra</ThemedText>
-      <Collapsible title=" compra ">
+      <Collapsible title=" compra ✅">
         <ThemedText>
           você comprou 1 livro{' '}
           <ThemedText type="defaultSemiBold">livro: nada pode me ferir</ThemedText>{' '}
@@ -42,13 +42,13 @@ export default function TabTwoScreen() {
           <ThemedText type="link"></ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="endereço de sua residencia e entrega ">
+      <Collapsible title="endereço de sua residencia e entrega✅ ">
         <ThemedText>
           Rua ourizona 1350, data de entrega: 15/10
           <ThemedText type="defaultSemiBold"></ThemedText> 
         </ThemedText>
       </Collapsible>
-      <Collapsible title="o livro ">
+      <Collapsible title="o livro✅ ">
         <ThemedText>
            <ThemedText type="defaultSemiBold"></ThemedText>  
           <ThemedText type="defaultSemiBold"></ThemedText>
@@ -61,7 +61,7 @@ export default function TabTwoScreen() {
           <ThemedText type="link"></ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="descrição do livro">
+      <Collapsible title="descrição do livro✅">
         <ThemedText>
         A história de superação do único homem a completar o treinamento das forças de elite e se tornar Navy SEAL, Army Ranger e TACP,
          A infância de David Goggins foi um pesadelo.
@@ -72,7 +72,7 @@ export default function TabTwoScreen() {
           <ThemedText type="link"></ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="agradecimentos">
+      <Collapsible title="agradecimentos✅">
         <ThemedText>
           {' '}
           <ThemedText type="defaultSemiBold">um agradecimento ao nosso cliente : gabriel ricardo</ThemedText> 
@@ -88,7 +88,7 @@ export default function TabTwoScreen() {
              <ThemedText type="defaultSemiBold">seu porduto esta entregue</ThemedText>{' '}
               
             </ThemedText>
-          ),
+          )
         })}
       </Collapsible>
     </ParallaxScrollView>
