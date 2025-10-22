@@ -26,6 +26,13 @@ export default function BookPurchaseScreen() {
     >
       <ThemedView style={styles.container}>
         <ThemedText type="title">Verity</ThemedText>
+
+        {/* Imagem do livro adicionada */}
+        <Image
+          source={require('@/assets/images/verity.png')}
+          style={styles.bookImage}
+        />
+
         <ThemedText type="subtitle">Colleen Hoover </ThemedText>
 
         <ThemedText style={styles.description}>
@@ -60,6 +67,13 @@ const styles = StyleSheet.create({
     gap: 12,
     padding: 16,
   },
+  bookImage: {
+    width: 150,
+    height: 220,
+    alignSelf: 'center',
+    marginVertical: 12,
+    borderRadius: 8,
+  },
   description: {
     fontSize: 16,
     lineHeight: 24,
@@ -77,16 +91,16 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 24,
-    alignItems: 'center', // centraliza horizontalmente
+    alignItems: 'center',
   },
   button: {
-    backgroundColor: '#003366', // azul escuro
+    backgroundColor: '#003366',
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 8,
   },
   buttonPressed: {
-    backgroundColor: '#336699', // azul mais claro quando pressionado
+    backgroundColor: '#336699',
   },
   buttonText: {
     color: '#fff',
