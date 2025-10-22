@@ -32,6 +32,10 @@ export default function TabTwoScreen() {
       <Collapsible title="Meus Livros">
       <Collapsible title="Nada pode me ferir!">
   <ThemedText>Autor: David Goggins</ThemedText>
+  <Image
+          source={require('@/assets/images/shopping 3.png')}
+          style={{ width: 100, height: 100, alignSelf: 'center' }}
+        />
   <ThemedText type="defaultSemiBold">R$39,90</ThemedText>
   <ThemedText>2x sem juros</ThemedText>
   <ExternalLink href="https://exemplo.com/remover-nada-pode-me-ferir">
@@ -41,6 +45,10 @@ export default function TabTwoScreen() {
 
 <Collapsible title="A Arte da Guerra">
   <ThemedText>Autor: Sun Tzu</ThemedText>
+  <Image
+          source={require('@/assets/images/a arte da guerra.webp')}
+          style={{ width: 100, height: 100, alignSelf: 'center' }}
+        />
   <ThemedText type="defaultSemiBold">R$36,99</ThemedText>
   <ThemedText>2x sem juros</ThemedText>
   <ExternalLink href="https://exemplo.com/remover-arte-da-guerra">
@@ -50,6 +58,10 @@ export default function TabTwoScreen() {
 
 <Collapsible title="O Livro dos Cinco Anéis">
   <ThemedText>Autor: Miyamoto Musashi</ThemedText>
+  <Image
+          source={require('@/assets/images/cinco aneis.jpg')}
+          style={{ width: 100, height: 100, alignSelf: 'center' }}
+        />
   <ThemedText type="defaultSemiBold">R$40,99</ThemedText>
   <ThemedText>2x sem juros</ThemedText>
   <ExternalLink href="https://exemplo.com/remover-5-aneis">
@@ -58,15 +70,20 @@ export default function TabTwoScreen() {
 </Collapsible>
 
         <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">learn more</ThemedText>
+          <ThemedText type="link">Excluir Tudo</ThemedText>
         </ExternalLink>
       </Collapsible>
       <Collapsible title="Livros Excluidos">
         <ThemedText>
-          aprenda ser programador em 5 minutos.{' '}
+        <Collapsible title="O Diário de um Banana"></Collapsible>  
+          <Image
+          source={require('@/assets/images/shopping.webp')}
+          style={{ width: 100, height: 100, alignSelf: 'center' }}
+        />
           <ThemedText type="defaultSemiBold"></ThemedText>{' '}
           <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
-            
+          <ThemedText type="defaultSemiBold">R$40,99</ThemedText>
+  <ThemedText>2x sem juros</ThemedText>
           </ThemedText>{' '}
           
         </ThemedText>
