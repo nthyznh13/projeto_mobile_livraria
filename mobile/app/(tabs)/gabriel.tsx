@@ -30,12 +30,12 @@ export default function TabTwoScreen() {
       <ThemedText>inicio da compra</ThemedText>
       <Collapsible title=" compra ✅">
         <ThemedText>
-          você comprou 1 livro{' '}
-          <ThemedText type="defaultSemiBold">livro: nada pode me ferir</ThemedText>{' '}
+          você comprou 1 livro
+          <ThemedText type="defaultSemiBold">livro: nada pode me ferir</ThemedText>
           <ThemedText type="defaultSemiBold"> por R$ 29,90.</ThemedText>
         </ThemedText>
         <ThemedText>
-           <ThemedText type="defaultSemiBold"></ThemedText>{' '}
+           <ThemedText type="defaultSemiBold"></ThemedText>
           
         </ThemedText>
         <ExternalLink href="https://docs.expo.dev/router/introduction">
@@ -68,25 +68,18 @@ export default function TabTwoScreen() {
           Pobreza, racismo e maus-tratos físicos marcaram seus dias, assombraram suas noites e quase determinaram seu futuro.
           <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link"></ThemedText>
-        </ExternalLink>
       </Collapsible>
       <Collapsible title="agradecimentos✅">
         <ThemedText>
-          {' '}
           <ThemedText type="defaultSemiBold">um agradecimento ao nosso cliente : gabriel ricardo</ThemedText> 
-          {' '}
           <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
-            
-          </ThemedText>{' '}
+          </ThemedText>
           Muito obrigado por comprar na nossa loja.
         </ThemedText>
         {Platform.select({
           ios: (
             <ThemedText>
-             <ThemedText type="defaultSemiBold">seu porduto esta entregue</ThemedText>{' '}
-              
+             <ThemedText type="defaultSemiBold">seu porduto esta entregue</ThemedText>
             </ThemedText>
           )
         })}
