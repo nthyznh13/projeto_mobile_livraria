@@ -1,6 +1,6 @@
-import { Image, TouchableOpacity } from 'react-native'; // adicionei TouchableOpacity
+import { Image, TouchableOpacity } from 'react-native'; 
 import { Platform, StyleSheet, TextInput } from 'react-native';
-import { useRouter } from 'expo-router'; // adicionei o hook para navegação
+import { useRouter } from 'expo-router'; 
 
 import { Collapsible } from '@/components/ui/collapsible';
 import { ExternalLink } from '@/components/external-link';
@@ -10,7 +10,7 @@ import { ThemedView } from '@/components/themed-view';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 
 export default function TabTwoScreen() {
-  const router = useRouter(); // inicializa o roteador
+  const router = useRouter(); 
 
   const books = [
     {
@@ -90,32 +90,44 @@ export default function TabTwoScreen() {
       </ThemedText>
 
       <ThemedView style={styles.bookGrid}>
-        {books.map((book, index) => {
-          if (book.title === 'Verity') {
-            return (
-              <TouchableOpacity
-                key={index}
-                style={styles.bookItem}
-                onPress={() => router.push('/julia')} // redireciona para a página do Verity
-              >
-                <Image source={book.image} style={styles.bookImage} />
-                <ThemedText style={styles.bookTitle}>{book.title}</ThemedText>
-                <ThemedText style={styles.bookAuthor}>{book.author}</ThemedText>
-                <ThemedText style={styles.bookPrice}>R$ {book.price}</ThemedText>
-              </TouchableOpacity>
-            );
-          } else {
-            return (
-              <ThemedView key={index} style={styles.bookItem}>
-                <Image source={book.image} style={styles.bookImage} />
-                <ThemedText style={styles.bookTitle}>{book.title}</ThemedText>
-                <ThemedText style={styles.bookAuthor}>{book.author}</ThemedText>
-                <ThemedText style={styles.bookPrice}>R$ {book.price}</ThemedText>
-              </ThemedView>
-            );
-          }
-        })}
-      </ThemedView>
+  {books.map((book, index) => (
+    <TouchableOpacity
+      key={index}
+      style={styles.bookItem}
+      onPress={() => {
+       
+        switch (book.title) {
+          case 'Verity':
+            router.push('/verity');
+            break;
+          case 'Tempestade de Ônix':
+            router.push('/tempestade');
+            break;
+          case 'Amor Teoricamente':
+            router.push('/amor');
+            break;
+          case 'A Empregada':
+            router.push('/empregada');
+            break;
+          case 'Assistente do Vilão':
+            router.push('/vilão');
+            break;
+          case 'A Biblioteca da Meia-Noite':
+            router.push('/meia-noite');
+            break;
+          default:
+            break;
+        }
+      }}
+    >
+      <Image source={book.image} style={styles.bookImage} />
+      <ThemedText style={styles.bookTitle}>{book.title}</ThemedText>
+      <ThemedText style={styles.bookAuthor}>{book.author}</ThemedText>
+      <ThemedText style={styles.bookPrice}>R$ {book.price}</ThemedText>
+    </TouchableOpacity>
+  ))}
+</ThemedView>
+
     </ParallaxScrollView>
   );
 }

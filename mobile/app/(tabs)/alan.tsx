@@ -13,6 +13,15 @@ import { Fonts } from '@/constants/theme';
 export default function TabTwoScreen() {
   const router = useRouter();
 
+  const books = [
+    { title: 'Verity', author: 'Colleen Hoover', price: '68,90', image: require('@/assets/images/verity.png'), route: '/verity' },
+    { title: 'Tempestade de Ônix', author: 'Rebecca Yarros', price: '59,64', image: require('@/assets/images/tempestade.png'), route: '/tempestade' },
+    { title: 'Amor Teoricamente', author: 'Ali Hazelwood', price: '54,90', image: require('@/assets/images/amor-teoricamente.png'), route: '/amor' },
+    { title: 'A Empregada', author: 'Freida McFadden', price: '41,53', image: require('@/assets/images/a-empregada.png'), route: '/empregada' },
+    { title: 'Assistente do Vilão', author: 'Hannah Nicole', price: '47,45', image: require('@/assets/images/assistente-vilao.png'), route: '/vilao' },
+    { title: 'A Biblioteca da Meia-Noite', author: 'Matt Haig', price: '38,50', image: require('@/assets/images/biblioteca-meia-noite.png'), route: '/meia-noite' },
+  ];
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -21,13 +30,10 @@ export default function TabTwoScreen() {
           source={require('@/assets/images/logo-livraria.png')}
           style={styles.image}
         />
-      }>
+      }
+    >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText
-          type="title"
-          style={{
-            fontFamily: Fonts.rounded,
-          }}>
+        <ThemedText type="title" style={{ fontFamily: Fonts.rounded }}>
           Livraria bookstore
         </ThemedText>
       </ThemedView>
@@ -35,136 +41,34 @@ export default function TabTwoScreen() {
       <ThemedText>Meu Carrinho:</ThemedText>
 
       <Collapsible title="Meus Livros">
-        {/* Livro Verity */}
-        <Collapsible title="Verity">
-          <View style={styles.bookContainer}>
-            <Image
-              source={require('@/assets/images/verity.png')}
-              style={styles.bookImage}
-            />
-            <View style={styles.bookInfo}>
-              <ThemedText style={styles.bookTitle}>Verity</ThemedText>
-              <ThemedText>Autora: Colleen Hoover</ThemedText>
-              <ThemedText type="defaultSemiBold">R$ 68,90</ThemedText>
-              <ThemedText>2x sem juros</ThemedText>
+        {books.map((book, index) => (
+          <Collapsible key={index} title={book.title}>
+            <View style={styles.bookContainer}>
+              <Image source={book.image} style={styles.bookImage} />
+              <View style={styles.bookInfo}>
+                <ThemedText style={styles.bookTitle}>{book.title}</ThemedText>
+                <ThemedText>Autor: {book.author}</ThemedText>
+                <ThemedText type="defaultSemiBold">R$ {book.price}</ThemedText>
+                <ThemedText>2x sem juros</ThemedText>
 
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => router.push('/gabriel')}
-              >
-                <ThemedText style={styles.buttonText}>Ver detalhes</ThemedText>
-              </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={() => router.push('/gabriel')}
+                >
+                  <ThemedText style={styles.buttonText}>Ver detalhes</ThemedText>
+                </TouchableOpacity>
 
-              <ExternalLink href="https://exemplo.com/remover-verity">
-                <ThemedText type="link">Excluir da lista</ThemedText>
-              </ExternalLink>
+                <ExternalLink href={`https://exemplo.com/remover-${book.title.replace(/\s+/g, '-').toLowerCase()}`}>
+                  <ThemedText type="link">Excluir da lista</ThemedText>
+                </ExternalLink>
+              </View>
             </View>
-          </View>
-        </Collapsible>
-
-        {/* Livro Nada Pode Me Ferir */}
-        <Collapsible title="Nada pode me ferir!">
-          <View style={styles.bookContainer}>
-            <Image
-              source={require('@/assets/images/shopping 3.png')}
-              style={styles.bookImage}
-            />
-            <View style={styles.bookInfo}>
-              <ThemedText style={styles.bookTitle}>Nada pode me ferir!</ThemedText>
-              <ThemedText>Autor: David Goggins</ThemedText>
-              <ThemedText type="defaultSemiBold">R$ 39,90</ThemedText>
-              <ThemedText>2x sem juros</ThemedText>
-
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => router.push('/gabriel')}
-              >
-                <ThemedText style={styles.buttonText}>Ver detalhes</ThemedText>
-              </TouchableOpacity>
-
-              <ExternalLink href="https://exemplo.com/remover-nada-pode-me-ferir">
-                <ThemedText type="link">Excluir da lista</ThemedText>
-              </ExternalLink>
-            </View>
-          </View>
-        </Collapsible>
-
-        {/* Livro A Arte da Guerra */}
-        <Collapsible title="A Arte da Guerra">
-          <View style={styles.bookContainer}>
-            <Image
-              source={require('@/assets/images/download.webp')}
-              style={styles.bookImage}
-            />
-            <View style={styles.bookInfo}>
-              <ThemedText style={styles.bookTitle}>A Arte da Guerra</ThemedText>
-              <ThemedText>Autor: Sun Tzu</ThemedText>
-              <ThemedText type="defaultSemiBold">R$ 36,99</ThemedText>
-              <ThemedText>2x sem juros</ThemedText>
-
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => router.push('/gabriel')}
-              >
-                <ThemedText style={styles.buttonText}>Ver detalhes</ThemedText>
-              </TouchableOpacity>
-
-              <ExternalLink href="https://exemplo.com/remover-arte-da-guerra">
-                <ThemedText type="link">Excluir da lista</ThemedText>
-              </ExternalLink>
-            </View>
-          </View>
-        </Collapsible>
-
-        {/* Livro dos Cinco Anéis */}
-        <Collapsible title="O Livro dos Cinco Anéis">
-          <View style={styles.bookContainer}>
-            <Image
-              source={require('@/assets/images/baixados.webp')}
-              style={styles.bookImage}
-            />
-            <View style={styles.bookInfo}>
-              <ThemedText style={styles.bookTitle}>O Livro dos Cinco Anéis</ThemedText>
-              <ThemedText>Autor: Miyamoto Musashi</ThemedText>
-              <ThemedText type="defaultSemiBold">R$ 40,99</ThemedText>
-              <ThemedText>2x sem juros</ThemedText>
-
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => router.push('/gabriel')}
-              >
-                <ThemedText style={styles.buttonText}>Ver detalhes</ThemedText>
-              </TouchableOpacity>
-
-              <ExternalLink href="https://exemplo.com/remover-5-aneis">
-                <ThemedText type="link">Excluir da lista</ThemedText>
-              </ExternalLink>
-            </View>
-          </View>
-        </Collapsible>
+          </Collapsible>
+        ))}
 
         <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
           <ThemedText type="link">learn more</ThemedText>
         </ExternalLink>
-      </Collapsible>
-
-      <Collapsible title="Livros Excluidos">
-        <ThemedText>
-          aprenda ser programador em 5 minutos.{' '}
-          <ThemedText type="defaultSemiBold"></ThemedText>{' '}
-          <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
-            
-          </ThemedText>{' '}
-          
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
       </Collapsible>
     </ParallaxScrollView>
   );
