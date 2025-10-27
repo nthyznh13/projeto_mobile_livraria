@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { StyleSheet, Button, Alert, View } from 'react-native';
+import { Alert, Button, StyleSheet, View } from 'react-native';
 
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
@@ -21,17 +21,15 @@ export default function BookPurchaseScreen() {
       }
     >
       <ThemedView style={styles.container}>
-        <ThemedText type="title">Teoricamente Amor</ThemedText>
-        <ThemedText type="subtitle">Ali Hazelwood</ThemedText>
+        <ThemedText type="title">Verity</ThemedText>
+        <ThemedText type="subtitle">Colleen Hoover </ThemedText>
 
         <ThemedText style={styles.description}>
-          Elsie Hannaway é uma física teórica — e também uma falsa namorada nas horas vagas.
-          Mas seu mundo desmorona quando ela descobre que o irmão da cliente é um professor
-          super rígido que pode acabar com sua carreira. Uma comédia romântica divertida e nerd!
+        "Verity", de Colleen Hoover, é um suspense psicológico sobre Lowen Ashleigh, uma escritora contratada para terminar a série de livros da autora Verity Crawford após um acidente. Ao vasculhar os manuscritos de Verity, Lowen encontra um diário que revela segredos perturbadores e chocantes sobre a verdadeira natureza da autora, sua família e o que pode ter acontecido com sua filha. A história combina elementos de suspense, romance e mistério, questionando a verdade por trás das revelações e o que pode estar escondido na mente das pessoas. "
         </ThemedText>
 
         <ThemedText type="defaultSemiBold" style={styles.price}>
-          R$ 59,90
+          R$ 68,90
         </ThemedText>
 
         <View style={styles.buttonContainer}>
