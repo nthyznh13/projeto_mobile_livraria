@@ -1,5 +1,6 @@
-import { Image } from 'expo-image';
+import { Image, TouchableOpacity } from 'react-native'; 
 import { Platform, StyleSheet, TextInput } from 'react-native';
+import { useRouter } from 'expo-router'; 
 
 import { Collapsible } from '@/components/ui/collapsible';
 import { ExternalLink } from '@/components/external-link';
@@ -9,6 +10,8 @@ import { ThemedView } from '@/components/themed-view';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 
 export default function TabTwoScreen() {
+  const router = useRouter(); 
+
   const books = [
     {
       title: 'Verity',
@@ -53,9 +56,9 @@ export default function TabTwoScreen() {
       headerBackgroundColor={{ light: '#6b6b6bff', dark: '#393a3aff' }}
       headerImage={
         <Image
-                 source={require('@/assets/images/logo-livraria.png')}
-                 style={styles.image}
-                 />
+          source={require('@/assets/images/logo-livraria.png')}
+          style={styles.image}
+        />
       }>
       <ThemedView style={styles.titleContainer}>
         <ThemedText
@@ -66,15 +69,16 @@ export default function TabTwoScreen() {
           Procurar
         </ThemedText>
       </ThemedView>
+
       <ThemedText style={{ fontFamily: 'Oswald' }}>
         Aqui voce encontra todo tipo de livro✅
       </ThemedText>
-       <TextInput
-                style={styles.input}
-                placeholder="Pesquisar" 
-              />
 
-      {/* Grid de livros */}
+      <TextInput
+        style={styles.input}
+        placeholder="Pesquisar"
+      />
+
       <ThemedText
         type="title"
         style={{
@@ -86,15 +90,44 @@ export default function TabTwoScreen() {
       </ThemedText>
 
       <ThemedView style={styles.bookGrid}>
-        {books.map((book, index) => (
-          <ThemedView key={index} style={styles.bookItem}>
-            <Image source={book.image} style={styles.bookImage} />
-            <ThemedText style={styles.bookTitle}>{book.title}</ThemedText>
-            <ThemedText style={styles.bookAuthor}>{book.author}</ThemedText>
-            <ThemedText style={styles.bookPrice}>R$ {book.price}</ThemedText>
-          </ThemedView>
-        ))}
-      </ThemedView>
+  {books.map((book, index) => (
+    <TouchableOpacity
+      key={index}
+      style={styles.bookItem}
+      onPress={() => {
+       
+        switch (book.title) {
+          case 'Verity':
+            router.push('/verity');
+            break;
+          case 'Tempestade de Ônix':
+            router.push('/tempestade');
+            break;
+          case 'Amor Teoricamente':
+            router.push('/amor');
+            break;
+          case 'A Empregada':
+            router.push('/empregada');
+            break;
+          case 'Assistente do Vilão':
+            router.push('/vilao');
+            break;
+          case 'A Biblioteca da Meia-Noite':
+            router.push('/meia-noite');
+            break;
+          default:
+            break;
+        }
+      }}
+    >
+      <Image source={book.image} style={styles.bookImage} />
+      <ThemedText style={styles.bookTitle}>{book.title}</ThemedText>
+      <ThemedText style={styles.bookAuthor}>{book.author}</ThemedText>
+      <ThemedText style={styles.bookPrice}>R$ {book.price}</ThemedText>
+    </TouchableOpacity>
+  ))}
+</ThemedView>
+
     </ParallaxScrollView>
   );
 }
@@ -156,16 +189,16 @@ const styles = StyleSheet.create({
     height: 178,
     width: 290,
     bottom: 0,
-    alignSelf: 'center', 
+    alignSelf: 'center',
     position: 'absolute',
   },
   input: {
- height: 40,
- borderWidth: 1,
- padding: 10,
- borderRadius: 5,
- borderColor: '#ccc',
- backgroundColor: '#fff',
- color: '#000', 
- },
+    height: 40,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 5,
+    borderColor: '#ccc',
+    backgroundColor: '#fff',
+    color: '#000',
+  },
 });
