@@ -51,7 +51,7 @@ export default function TabTwoScreen() {
 
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.push(book.route)}
+                onPress={() => router.push('/gabriel')}
               >
                 <ThemedText style={styles.buttonText}>Ver detalhes</ThemedText>
               </TouchableOpacity>
