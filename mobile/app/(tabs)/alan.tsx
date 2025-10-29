@@ -38,7 +38,6 @@ export default function TabTwoScreen() {
 
       <ThemedText>Meu Carrinho:</ThemedText>
 
-      {/* Container de livros sem colapsar e sem flechas */}
       <ScrollView>
         {books.map((book, index) => (
           <View key={index} style={styles.bookContainer}>
