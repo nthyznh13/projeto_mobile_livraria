@@ -1,13 +1,11 @@
-import { Image, TouchableOpacity, View } from 'react-native';
-import { Platform, StyleSheet } from 'react-native';
+import { Image, TouchableOpacity, View, ScrollView } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 
-import { Collapsible } from '@/components/ui/collapsible';
 import { ExternalLink } from '@/components/external-link';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Fonts } from '@/constants/theme';
 
 export default function TabTwoScreen() {
@@ -34,42 +32,40 @@ export default function TabTwoScreen() {
     >
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title" style={{ fontFamily: Fonts.rounded }}>
-          Livraria bookstore
+          Livraria Bookstore
         </ThemedText>
       </ThemedView>
 
       <ThemedText>Meu Carrinho:</ThemedText>
 
-      <Collapsible title="Meus Livros">
+      <ScrollView>
         {books.map((book, index) => (
-          <Collapsible key={index} title={book.title}>
-            <View style={styles.bookContainer}>
-              <Image source={book.image} style={styles.bookImage} />
-              <View style={styles.bookInfo}>
-                <ThemedText style={styles.bookTitle}>{book.title}</ThemedText>
-                <ThemedText>Autor: {book.author}</ThemedText>
-                <ThemedText type="defaultSemiBold">R$ {book.price}</ThemedText>
-                <ThemedText>2x sem juros</ThemedText>
+          <View key={index} style={styles.bookContainer}>
+            <Image source={book.image} style={styles.bookImage} />
+            <View style={styles.bookInfo}>
+              <ThemedText style={styles.bookTitle}>{book.title}</ThemedText>
+              <ThemedText>Autor: {book.author}</ThemedText>
+              <ThemedText type="defaultSemiBold">R$ {book.price}</ThemedText>
+              <ThemedText>2x sem juros</ThemedText>
 
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => router.push('/gabriel')}
-                >
-                  <ThemedText style={styles.buttonText}>Ver detalhes</ThemedText>
-                </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => router.push('/gabriel')}
+              >
+                <ThemedText style={styles.buttonText}>Ver detalhes</ThemedText>
+              </TouchableOpacity>
 
-                <ExternalLink href={`https://exemplo.com/remover-${book.title.replace(/\s+/g, '-').toLowerCase()}`}>
-                  <ThemedText type="link">Excluir da lista</ThemedText>
-                </ExternalLink>
-              </View>
+              <ExternalLink href={`https://exemplo.com/remover-${book.title.replace(/\s+/g, '-').toLowerCase()}`}>
+                <ThemedText type="link">Excluir da lista</ThemedText>
+              </ExternalLink>
             </View>
-          </Collapsible>
+          </View>
         ))}
 
         <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
           <ThemedText type="link">learn more</ThemedText>
         </ExternalLink>
-      </Collapsible>
+      </ScrollView>
     </ParallaxScrollView>
   );
 }

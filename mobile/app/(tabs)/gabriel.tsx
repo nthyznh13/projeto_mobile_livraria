@@ -31,8 +31,8 @@ export default function TabTwoScreen() {
       <Collapsible title=" compra ✅">
         <ThemedText>
           você comprou 1 livro
-          <ThemedText type="defaultSemiBold">livro: nada pode me ferir</ThemedText>
-          <ThemedText type="defaultSemiBold"> por R$ 29,90.</ThemedText>
+          <ThemedText type="defaultSemiBold"> livro: Amor, Teoricamente</ThemedText>
+          <ThemedText type="defaultSemiBold"> por   R$ 54,90.</ThemedText>
         </ThemedText>
         <ThemedText>
            <ThemedText type="defaultSemiBold"></ThemedText>
@@ -54,7 +54,7 @@ export default function TabTwoScreen() {
           <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
         <Image
-          source={require('@/assets/images/shopping 3.png')}
+          source={require('@/assets/images/amor-teoricamente.png')}
           style={{ width: 100, height: 100, alignSelf: 'center' }}
         />
         <ExternalLink href="https://reactnative.dev/docs/images">
@@ -63,9 +63,10 @@ export default function TabTwoScreen() {
       </Collapsible>
       <Collapsible title="descrição do livro✅">
         <ThemedText>
-        A história de superação do único homem a completar o treinamento das forças de elite e se tornar Navy SEAL, Army Ranger e TACP,
-         A infância de David Goggins foi um pesadelo.
-          Pobreza, racismo e maus-tratos físicos marcaram seus dias, assombraram suas noites e quase determinaram seu futuro.
+        Elsie Hannaway é uma física teórica que se vê em uma situação complicada. Ela trabalha como professora adjunta, mas seu salário é insuficiente para cobrir suas despesas.
+         Para complementar a renda, ela se torna uma "namorada de mentira", oferecendo seus serviços através de um aplicativo. Sua vida toma um rumo inesperado quando Jack Smith, o irmão do seu cliente favorito, entra em cena. 
+         Jack é um físico experimental e um dos principais obstáculos para o emprego dos sonhos de Elsie. A tensão entre eles cresce à medida que se veem forçados a conviver, e Elsie descobre que não precisa fingir ser outra pessoa quando está com Jack. 
+         A história explora temas de rivalidade acadêmica, romance e autodescoberta, enquanto Elsie tenta equilibrar suas ambições profissionais com seus sentimentos por Jack. 
           <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
       </Collapsible>
