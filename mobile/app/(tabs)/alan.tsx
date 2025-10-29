@@ -1,13 +1,11 @@
-import { Image, TouchableOpacity, View } from 'react-native';
-import { Platform, StyleSheet } from 'react-native';
+import { Image, TouchableOpacity, View, ScrollView } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 
-import { Collapsible } from '@/components/ui/collapsible';
 import { ExternalLink } from '@/components/external-link';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Fonts } from '@/constants/theme';
 
 export default function TabTwoScreen() {
@@ -34,108 +32,42 @@ export default function TabTwoScreen() {
     >
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title" style={{ fontFamily: Fonts.rounded }}>
-          Livraria bookstore
+          Livraria Bookstore
         </ThemedText>
       </ThemedView>
 
       <ThemedText>Meu Carrinho:</ThemedText>
 
-      <Collapsible title="Meus Livros">
-      
-      <Collapsible title="Nada pode me ferir!">
-  <ThemedText>Autor: David Goggins</ThemedText>
-  <Image
-          source={require('@/assets/images/shopping 3.png')}
-          style={{ width: 100, height: 100, alignSelf: 'center' }}
-        />
-  <ThemedText type="defaultSemiBold">R$39,90</ThemedText>
-  <ThemedText>2x sem juros</ThemedText>
-  <ExternalLink href="https://exemplo.com/remover-nada-pode-me-ferir">
-    <ThemedText type="link">Excluir da lista</ThemedText>
-  </ExternalLink>
-</Collapsible>
-
-<Collapsible title="A Arte da Guerra">
-  <ThemedText>Autor: Sun Tzu</ThemedText>
-  <Image
-          source={require('@/assets/images/a arte da guerra.webp')}
-          style={{ width: 100, height: 100, alignSelf: 'center' }}
-        />
-  <ThemedText type="defaultSemiBold">R$36,99</ThemedText>
-  <ThemedText>2x sem juros</ThemedText>
-  <ExternalLink href="https://exemplo.com/remover-arte-da-guerra">
-    <ThemedText type="link">Excluir da lista</ThemedText>
-  </ExternalLink>
-</Collapsible>
-
-<Collapsible title="O Livro dos Cinco Anéis">
-  <ThemedText>Autor: Miyamoto Musashi</ThemedText>
-  <Image
-          source={require('@/assets/images/cinco aneis.jpg')}
-          style={{ width: 100, height: 100, alignSelf: 'center' }}
-        />
-  <ThemedText type="defaultSemiBold">R$40,99</ThemedText>
-  <ThemedText>2x sem juros</ThemedText>
-  <ExternalLink href="https://exemplo.com/remover-5-aneis">
-    <ThemedText type="link">Excluir da lista</ThemedText>
-  </ExternalLink>
-</Collapsible>
 =======
+      <ScrollView>
         {books.map((book, index) => (
-          <Collapsible key={index} title={book.title}>
-            <View style={styles.bookContainer}>
-              <Image source={book.image} style={styles.bookImage} />
-              <View style={styles.bookInfo}>
-                <ThemedText style={styles.bookTitle}>{book.title}</ThemedText>
-                <ThemedText>Autor: {book.author}</ThemedText>
-                <ThemedText type="defaultSemiBold">R$ {book.price}</ThemedText>
-                <ThemedText>2x sem juros</ThemedText>
+          <View key={index} style={styles.bookContainer}>
+            <Image source={book.image} style={styles.bookImage} />
+            <View style={styles.bookInfo}>
+              <ThemedText style={styles.bookTitle}>{book.title}</ThemedText>
+              <ThemedText>Autor: {book.author}</ThemedText>
+              <ThemedText type="defaultSemiBold">R$ {book.price}</ThemedText>
+              <ThemedText>2x sem juros</ThemedText>
 
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => router.push('/gabriel')}
-                >
-                  <ThemedText style={styles.buttonText}>Ver detalhes</ThemedText>
-                </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => router.push('/gabriel')}
+              >
+                <ThemedText style={styles.buttonText}>Ver detalhes</ThemedText>
+              </TouchableOpacity>
 
-                <ExternalLink href={`https://exemplo.com/remover-${book.title.replace(/\s+/g, '-').toLowerCase()}`}>
-                  <ThemedText type="link">Excluir da lista</ThemedText>
-                </ExternalLink>
-              </View>
+              <ExternalLink href={`https://exemplo.com/remover-${book.title.replace(/\s+/g, '-').toLowerCase()}`}>
+                <ThemedText type="link">Excluir da lista</ThemedText>
+              </ExternalLink>
             </View>
-          </Collapsible>
+          </View>
         ))}
 
 
         <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
           <ThemedText type="link">learn more</ThemedText>
         </ExternalLink>
-      </Collapsible>
-
-      <Collapsible title="Livros Excluidos">
-        <ThemedText>
-        <Collapsible title="O Diário de um Banana"></Collapsible>  
-          <Image
-          source={require('@/assets/images/shopping.webp')}
-          style={{ width: 100, height: 100, alignSelf: 'center' }}
-        />
-          <ThemedText type="defaultSemiBold"></ThemedText>{' '}
-          <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
-          <ThemedText type="defaultSemiBold">R$40,99</ThemedText>
-  <ThemedText>2x sem juros</ThemedText>
-          </ThemedText>{' '}
-          
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-
+      </ScrollView>
     </ParallaxScrollView>
   );
 }

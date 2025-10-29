@@ -118,17 +118,17 @@ const styles = StyleSheet.create({
     color: '#000', 
   },
   buttonContainer: {
-    marginTop: 24,
-    alignItems: 'center', // centraliza horizontalmente
+    marginTop: 30,
+    alignItems: 'center', 
   },
   button: {
-    backgroundColor: '#003366', // azul escuro
+    backgroundColor: '#003366', 
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 8,
   },
   buttonPressed: {
-    backgroundColor: '#336699', // azul mais claro quando pressionado
+    backgroundColor: '#336699', 
   },
   buttonText: {
     color: '#fff',

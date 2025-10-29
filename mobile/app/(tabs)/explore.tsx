@@ -110,7 +110,7 @@ export default function TabTwoScreen() {
             router.push('/empregada');
             break;
           case 'Assistente do Vilão':
-            router.push('/vilão');
+            router.push('/vilao');
             break;
           case 'A Biblioteca da Meia-Noite':
             router.push('/meia-noite');
