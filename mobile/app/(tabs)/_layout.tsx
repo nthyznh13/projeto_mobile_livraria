@@ -32,10 +32,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="alan"
+        name="cadastro"
         options={{
-          title: 'Bookstore',
-          tabBarIcon: ({ color }) => <Ionicons name="cart-outline" size={24} color="white" />,
+          title: 'Cadastro',
+          tabBarIcon: ({ color }) => <Ionicons name="cart-outline" size={24} color="with" />,
         }}
       />
     </Tabs>    
