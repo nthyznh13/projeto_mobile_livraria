@@ -6,6 +6,7 @@ import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -32,10 +33,14 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="alan"
+        name="cadastro"
         options={{
-          title: 'Bookstore',
+          title: 'Cadastro',
+<<<<<<< HEAD
           tabBarIcon: ({ color }) => <Ionicons name="cart-outline" size={24} color="white" />,
+=======
+          tabBarIcon: ({ color }) => <MaterialIcons name="app-registration" size={24} color={color} />,
+>>>>>>> 1b21060b91c8011ed23750b95a5828075576b985
         }}
       />
     </Tabs>    

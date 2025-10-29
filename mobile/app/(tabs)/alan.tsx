@@ -38,6 +38,7 @@ export default function TabTwoScreen() {
 
       <ThemedText>Meu Carrinho:</ThemedText>
 
+=======
       <ScrollView>
         {books.map((book, index) => (
           <View key={index} style={styles.bookContainer}>
@@ -61,6 +62,7 @@ export default function TabTwoScreen() {
             </View>
           </View>
         ))}
+
 
         <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
           <ThemedText type="link">learn more</ThemedText>
