@@ -1,139 +1,80 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet, TextInput, Pressable, View } from 'react-native'; 
+import React from 'react';
+import { View, Text, Image, StyleSheet, Dimensions, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
 
-export default function HomeScreen() {
+const { width, height } = Dimensions.get('window');
+
+const HomePage: React.FC = () => {
   const router = useRouter();
 
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1a1e1fff' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/logo-livraria.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">BookStore</ThemedText>
-        <HelloWave />
-      </ThemedView>
+    <View style={styles.container}>
+      {/* Logo */}
+      <Image
+        source={require('@/assets/images/logo-livraria.png')}
+        style={styles.logo}
+        resizeMode="contain"
+      />
 
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Name</ThemedText>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter your full name" 
-        />
-      </ThemedView>
+      {/* Texto sobre o app */}
+      <Text style={styles.description}>
+        Bem-vindo à nossa livraria! Aqui você encontra os melhores livros, clássicos e lançamentos, todos cuidadosamente selecionados para inspirar sua leitura.
+      </Text>
 
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Username</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
-
-        <TextInput
-          style={styles.input}
-          placeholder="Choose a username"
-        />
-      </ThemedView>
-
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Email</ThemedText>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter your email address"
-          keyboardType="email-address" 
-        />
-      </ThemedView>
-
-      {/* Botão Finalizar Inscrição estilizado */}
+      {/* Botão Comprar */}
       <View style={styles.buttonContainer}>
         <Pressable
           style={({ pressed }) => [
             styles.button,
             pressed && styles.buttonPressed
           ]}
-          onPress={() => router.push('/explore')}
+          onPress={() => router.push('/(tabs)/cadastro')} 
         >
-          <ThemedText type="subtitle" style={styles.buttonText}>
-            Finalizar Inscrição
-          </ThemedText>
+          <Text style={styles.buttonText}>Iniciar</Text>
         </Pressable>
       </View>
-    </ParallaxScrollView>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  container: {
+    flex: 1,
+    backgroundColor: '#1a1a1a',
     alignItems: 'center',
-    gap: 8,
+    justifyContent: 'center',
+    paddingHorizontal: 20,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  logo: {
+    width: width * 0.5,
+    height: height * 0.2,
+    marginBottom: 30,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    alignSelf: 'center', 
-    position: 'absolute',
-  },
-  input: {
-    height: 40,
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 5,
-    borderColor: '#ccc',
-    backgroundColor: '#fff', 
-    color: '#000', 
+  description: {
+    color: '#fff',
+    fontSize: 16,
+    textAlign: 'center',
+    marginBottom: 50,
   },
   buttonContainer: {
-    marginTop: 30,
-    alignItems: 'center', 
+    width: '100%',
+    alignItems: 'center',
   },
   button: {
-    backgroundColor: '#003366', 
-    paddingVertical: 12,
-    paddingHorizontal: 32,
+    backgroundColor: '#ff6f61',
+    paddingVertical: 15,
+    paddingHorizontal: 40,
     borderRadius: 8,
   },
   buttonPressed: {
-    backgroundColor: '#336699', 
+    backgroundColor: '#ff4c3b',
   },
   buttonText: {
     color: '#fff',
-    fontWeight: '600',
     fontSize: 16,
-    textAlign: 'center',
+    fontWeight: 'bold',
   },
 });
+
+export default HomePage;
