@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { Tabs } from 'expo-router';
 import React from 'react';
 
@@ -43,5 +43,3 @@ export default function TabLayout() {
     </Tabs>    
   );
 }
-=======
->>>>>>> 2a2e1362467580374e3c6d3bc0446375ed522539
