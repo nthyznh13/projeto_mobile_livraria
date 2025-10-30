@@ -27,17 +27,17 @@ export default function HomeScreen() {
       </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Name</ThemedText>
+        <ThemedText type="subtitle">Nome</ThemedText>
         <TextInput
           style={styles.input}
-          placeholder="Enter your full name"
+          placeholder="Digite seu nome completo"
         />
       </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
         <Link href="/modal">
           <Link.Trigger>
-            <ThemedText type="subtitle">Username</ThemedText>
+            <ThemedText type="subtitle">Sobrenome</ThemedText>
           </Link.Trigger>
           <Link.Preview />
           <Link.Menu>
@@ -60,7 +60,7 @@ export default function HomeScreen() {
 
         <TextInput
           style={styles.input}
-          placeholder="Choose a username"
+          placeholder="Escolha um nome de usuário"
         />
       </ThemedView>
 
@@ -68,10 +68,20 @@ export default function HomeScreen() {
         <ThemedText type="subtitle">Email</ThemedText>
         <TextInput
           style={styles.input}
-          placeholder="Enter your email address"
+          placeholder="Digite seu endereço de e-mail"
           keyboardType="email-address"
         />
       </ThemedView>
+
+      <ThemedView style={styles.stepContainer}>
+  <ThemedText type="subtitle">Senha</ThemedText>
+  <TextInput
+    style={styles.input}
+    placeholder="Digite sua senha"
+    secureTextEntry={true} 
+  />
+</ThemedView>
+
 
       {/* Botão Finalizar Inscrição estilizado */}
       <View style={styles.buttonContainer}>
