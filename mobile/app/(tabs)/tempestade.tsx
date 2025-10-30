@@ -27,7 +27,6 @@ export default function BookPurchaseScreen() {
       <ThemedView style={styles.container}>
         <ThemedText type="title">Tempestade de Ônix</ThemedText>
 
-        {/* Imagem do livro adicionada */}
         <Image
           source={require('@/assets/images/tempestade.png')}
           style={styles.bookImage}
@@ -37,7 +36,9 @@ export default function BookPurchaseScreen() {
 
         <ThemedText style={styles.description}>
 Sinopse
-"Tempestade de Ônix" é a sequência da série "Empíreo", onde a protagonista Violet Sorrengail enfrenta novos desafios após sobreviver ao primeiro ano na Academia de Guerra. Neste livro, Violet deve lidar com perigos ainda maiores, tanto físicos quanto políticos, enquanto busca aliados em terras desconhecidas para enfrentar inimigos poderosos que ameaçam seu mundo. A narrativa é rica em ação, com sequências emocionantes de voos com dragões e batalhas intensas, mantendo o ritmo acelerado que cativou os leitores no primeiro volume.        </ThemedText>
+"Tempestade de Ônix" é a sequência da série "Empíreo", onde a protagonista Violet Sorrengail enfrenta novos desafios após sobreviver ao primeiro ano na Academia de Guerra.
+ Neste livro, Violet deve lidar com perigos ainda maiores, tanto físicos quanto políticos, enquanto busca aliados em terras desconhecidas para enfrentar inimigos poderosos que ameaçam seu mundo.
+  A narrativa é rica em ação, com sequências emocionantes de voos com dragões e batalhas intensas, mantendo o ritmo acelerado que cativou os leitores no primeiro volume.        </ThemedText>
 
         <ThemedText type="defaultSemiBold" style={styles.price}>
           R$ 59,64
@@ -50,7 +51,7 @@ Sinopse
             styles.button,
             pressed && styles.buttonPressed
           ]}
-          onPress={() => router.push('/alan')}
+          onPress={() => router.push('/tempestade2')}
         >
           <ThemedText type="subtitle" style={styles.buttonText}>
            comprar

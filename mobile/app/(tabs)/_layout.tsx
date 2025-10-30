@@ -36,11 +36,7 @@ export default function TabLayout() {
         name="cadastro"
         options={{
           title: 'Cadastro',
-<<<<<<< HEAD
-          tabBarIcon: ({ color }) => <Ionicons name="cart-outline" size={24} color="white" />,
-=======
           tabBarIcon: ({ color }) => <MaterialIcons name="app-registration" size={24} color={color} />,
->>>>>>> 1b21060b91c8011ed23750b95a5828075576b985
         }}
       />
     </Tabs>    
