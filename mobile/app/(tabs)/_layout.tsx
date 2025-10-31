@@ -42,8 +42,7 @@ export default function TabLayout() {
       />
     </Tabs>    
   );
-<<<<<<< HEAD
+ 
 }
-=======
-}
->>>>>>> 24900a249dad051f6924636e403164da4fa035a1
+
+
