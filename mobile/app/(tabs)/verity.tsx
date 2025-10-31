@@ -50,7 +50,7 @@ export default function BookPurchaseScreen() {
             styles.button,
             pressed && styles.buttonPressed
           ]}
-          onPress={() => router.push('/alan')}
+          onPress={() => router.push('/verity1')}
         >
           <ThemedText type="subtitle" style={styles.buttonText}>
            comprar
