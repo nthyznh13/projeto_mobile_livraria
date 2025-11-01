@@ -1,111 +1,108 @@
 import { useNavigation } from '@react-navigation/native';
 import { Image } from 'expo-image';
-import { GestureResponderEvent, Pressable, StyleSheet, View } from 'react-native';
-
+import { Platform, StyleSheet } from 'react-native';
+import { Collapsible } from '@/components/ui/collapsible';
+import { ExternalLink } from '@/components/external-link';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { router } from 'expo-router';
+import { IconSymbol } from '@/components/ui/icon-symbol';
+import { Fonts } from '@/constants/theme';
 
-export default function BookPurchaseScreen() {
-  const navigation = useNavigation();
-
-  function handleBuy(event: GestureResponderEvent): void {
-    throw new Error('Function not implemented.');
-  }
-
+export default function TabTwoScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A8DADC', dark: '#457B9D' }}
+      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
       headerImage={
-        <Image
-          source={require('@/assets/images/logo-livraria.png')}
-          style={styles.reactLogo}
-        />
-      }
-    >
-      <ThemedView style={styles.container}>
-        <ThemedText type="title">Tempestade de Ônix</ThemedText>
-
-        {/* Imagem do livro adicionada */}
-        <Image
-          source={require('@/assets/images/tempestade.png')}
-          style={styles.bookImage}
-        />
-
-        <ThemedText type="subtitle">Rebecca Yarros </ThemedText>
-
-        <ThemedText style={styles.description}>
-Sinopse
-"Tempestade de Ônix" é a sequência da série "Empíreo", onde a protagonista Violet Sorrengail enfrenta novos desafios após sobreviver ao primeiro ano na Academia de Guerra. Neste livro, Violet deve lidar com perigos ainda maiores, tanto físicos quanto políticos, enquanto busca aliados em terras desconhecidas para enfrentar inimigos poderosos que ameaçam seu mundo. A narrativa é rica em ação, com sequências emocionantes de voos com dragões e batalhas intensas, mantendo o ritmo acelerado que cativou os leitores no primeiro volume.        </ThemedText>
-
-        <ThemedText type="defaultSemiBold" style={styles.price}>
-          R$ 59,64
+         <Image
+         source={require('@/assets/images/logo-livraria.png')}
+         style={styles.image}
+         />
+      }>
+      <ThemedView style={styles.titleContainer}>
+        <ThemedText
+          type="title"
+          style={{
+            fontFamily: Fonts.rounded,
+          }}>
+          data de entrega 
         </ThemedText>
       </ThemedView>
-     
-      <View style={styles.buttonContainer}>
-        <Pressable
-          style={({ pressed }) => [
-            styles.button,
-            pressed && styles.buttonPressed
-          ]}
-          onPress={() => router.push('/tempestade2')}
-        >
-          <ThemedText type="subtitle" style={styles.buttonText}>
-           comprar
+      <ThemedText>inicio da compra</ThemedText>
+      <Collapsible title=" compra ✅">
+        <ThemedText>
+          você comprou 1 livro
+          <ThemedText type="defaultSemiBold"> livro:Tempestade de Ônix </ThemedText>
+          <ThemedText type="defaultSemiBold"> por   R$ 59,64.</ThemedText>
+        </ThemedText>
+        <ThemedText>
+           <ThemedText type="defaultSemiBold"></ThemedText>
+          
+        </ThemedText>
+        <ExternalLink href="https://docs.expo.dev/router/introduction">
+          <ThemedText type="link"></ThemedText>
+        </ExternalLink>
+      </Collapsible>
+      <Collapsible title="endereço de sua residencia e entrega✅ ">
+        <ThemedText>
+          Rua ourizona 1350, data de entrega: 15/10
+          <ThemedText type="defaultSemiBold"></ThemedText> 
+        </ThemedText>
+      </Collapsible>
+      <Collapsible title="o livro✅ ">
+        <ThemedText>
+           <ThemedText type="defaultSemiBold"></ThemedText>  
+          <ThemedText type="defaultSemiBold"></ThemedText>
+        </ThemedText>
+        <Image
+          source={require('@/assets/images/tempestade.png')}
+          style={{ width: 100, height: 100, alignSelf: 'center' }}
+        />
+        <ExternalLink href="https://reactnative.dev/docs/images">
+          <ThemedText type="link"></ThemedText>
+        </ExternalLink>
+      </Collapsible>
+      <Collapsible title="descrição do livro✅">
+        <ThemedText>
+        Sinopse "Tempestade de Ônix" é a sequência da série "Empíreo", onde a protagonista Violet Sorrengail enfrenta novos desafios após sobreviver ao primeiro ano na Academia de Guerra. Neste livro, Violet deve lidar com perigos ainda maiores, tanto físicos quanto políticos, enquanto busca aliados em terras desconhecidas para enfrentar inimigos poderosos que ameaçam seu mundo. A narrativa é rica em ação, com sequências emocionantes de voos com dragões e batalhas intensas, mantendo o ritmo acelerado que cativou os leitores no primeiro volume.    
+          <ThemedText type="defaultSemiBold"></ThemedText>
+        </ThemedText>
+      </Collapsible>
+      <Collapsible title="agradecimentos✅">
+        <ThemedText>
+          <ThemedText type="defaultSemiBold">um agradecimento ao nosso cliente : gabriel ricardo</ThemedText> 
+          <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
           </ThemedText>
-        </Pressable>
-      </View>
+          Muito obrigado por comprar na nossa loja.
+        </ThemedText>
+        {Platform.select({
+          ios: (
+            <ThemedText>
+             <ThemedText type="defaultSemiBold">seu porduto esta entregue</ThemedText>
+            </ThemedText>
+          )
+        })}
+      </Collapsible>
     </ParallaxScrollView>
-
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    gap: 12,
-    padding: 16,
+  headerImage: {
+    color: '#808080',
+    bottom: -90,
+    left: -35,
+    position: 'absolute',
   },
-  bookImage: {
-    width: 150,
-    height: 220,
-    alignSelf: 'center',
-    marginVertical: 12,
-    borderRadius: 8,
+  titleContainer: {
+    flexDirection: 'row',
+    gap: 8,
   },
-  description: {
-    fontSize: 16,
-    lineHeight: 24,
-  },
-  price: {
-    fontSize: 20,
-    color: '#89CFF0',
-  },
-  reactLogo: {
+   image: {
     height: 178,
     width: 290,
-    alignSelf: 'center',
-    position: 'absolute',
     bottom: 0,
-  },
-  buttonContainer: {
-    marginTop: 24,
-    alignItems: 'center',
-  },
-  button: {
-    backgroundColor: '#003366',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 8,
-  },
-  buttonPressed: {
-    backgroundColor: '#336699',
-  },
-  buttonText: {
-    color: '#fff',
-    fontWeight: '600',
-    fontSize: 16,
-    textAlign: 'center',
-  },
+    alignSelf: 'center', 
+    position: 'absolute',
+  }
 });

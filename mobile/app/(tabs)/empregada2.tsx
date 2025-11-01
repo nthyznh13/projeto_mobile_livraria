@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
 import { Collapsible } from '@/components/ui/collapsible';
@@ -31,8 +32,8 @@ export default function TabTwoScreen() {
       <Collapsible title=" compra ✅">
         <ThemedText>
           você comprou 1 livro
-          <ThemedText type="defaultSemiBold"> livro: Verity</ThemedText>
-          <ThemedText type="defaultSemiBold"> por   R$ 68,90.</ThemedText>
+          <ThemedText type="defaultSemiBold"> livro: A Empregada</ThemedText>
+          <ThemedText type="defaultSemiBold"> por  R$ 41,53.</ThemedText>
         </ThemedText>
         <ThemedText>
            <ThemedText type="defaultSemiBold"></ThemedText>
@@ -54,7 +55,7 @@ export default function TabTwoScreen() {
           <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
         <Image
-          source={require('@/assets/images/verity.png')}
+          source={require('@/assets/images/a-empregada.png')}
           style={{ width: 100, height: 100, alignSelf: 'center' }}
         />
         <ExternalLink href="https://reactnative.dev/docs/images">
@@ -63,12 +64,7 @@ export default function TabTwoScreen() {
       </Collapsible>
       <Collapsible title="descrição do livro✅">
         <ThemedText>
-        "Verity", de Colleen Hoover, é um suspense psicológico sobre Lowen Ashleigh,
-         uma escritora contratada para terminar a série de livros da autora Verity Crawford após um acidente.
-          Ao vasculhar os manuscritos de Verity,
-           Lowen encontra um diário que revela segredos perturbadores e chocantes sobre a verdadeira natureza da autora,
-            sua família e o que pode ter acontecido com sua filha. A história combina elementos de suspense, romance e mistério, questionando a
-             verdade por trás das revelações e o que pode estar escondido na mente das pessoas. "
+        A história de "A Empregada" de Freida McFadden é um thriller psicológico que explora a vida de Millie, uma ex-presidiária que aceita um emprego doméstico na mansão de Nina Winchester. A trama se desenvolve com a instabilidade emocional de Nina, a manipulação de Andrew e a tensão entre os personagens. O livro é narrado por Millie e segue suas tentativas de se adaptar à nova vida enquanto lida com segredos e reviravoltas inesperadas. 
           <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
       </Collapsible>

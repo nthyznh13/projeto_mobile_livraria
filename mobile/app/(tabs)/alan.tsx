@@ -1,5 +1,4 @@
-import { Image, TouchableOpacity, View, ScrollView } from 'react-native';
-import { StyleSheet } from 'react-native';
+import { Image, TouchableOpacity, View, ScrollView, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 
 import { ExternalLink } from '@/components/external-link';
@@ -8,16 +7,60 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Fonts } from '@/constants/theme';
 
+interface Book {
+  title: string;
+  author: string;
+  price: string;
+  image: any;
+  route: string;
+}
+
 export default function TabTwoScreen() {
   const router = useRouter();
 
-  const books = [
-    { title: 'Verity', author: 'Colleen Hoover', price: '68,90', image: require('@/assets/images/verity.png'), route: '/verity' },
-    { title: 'Tempestade de Ônix', author: 'Rebecca Yarros', price: '59,64', image: require('@/assets/images/tempestade.png'), route: '/tempestade' },
-    { title: 'Amor Teoricamente', author: 'Ali Hazelwood', price: '54,90', image: require('@/assets/images/amor-teoricamente.png'), route: '/amor' },
-    { title: 'A Empregada', author: 'Freida McFadden', price: '41,53', image: require('@/assets/images/a-empregada.png'), route: '/empregada' },
-    { title: 'Assistente do Vilão', author: 'Hannah Nicole', price: '47,45', image: require('@/assets/images/assistente-vilao.png'), route: '/vilao' },
-    { title: 'A Biblioteca da Meia-Noite', author: 'Matt Haig', price: '38,50', image: require('@/assets/images/biblioteca-meia-noite.png'), route: '/meia-noite' },
+  const books: Book[] = [
+    {
+      title: 'Verity',
+      author: 'Colleen Hoover',
+      price: '68,90',
+      image: require('@/assets/images/verity.png'),
+      route: '/verity1',
+    },
+    {
+      title: 'Tempestade de Ônix',
+      author: 'Rebecca Yarros',
+      price: '59,64',
+      image: require('@/assets/images/tempestade.png'),
+      route: '/tempestade2',
+    },
+    {
+      title: 'Amor Teoricamente',
+      author: 'Ali Hazelwood',
+      price: '54,90',
+      image: require('@/assets/images/amor-teoricamente.png'),
+      route: '/gabriel',
+    },
+    {
+      title: 'A Empregada',
+      author: 'Freida McFadden',
+      price: '41,53',
+      image: require('@/assets/images/a-empregada.png'),
+      route: '/empregada2',
+    },
+    {
+      title: 'Assistente do Vilão',
+      author: 'Hannah Nicole',
+      price: '47,45',
+      image: require('@/assets/images/assistente-vilao.png'),
+      route: '/vilao2',
+    },
+    {
+      title: 'A Biblioteca da Meia-Noite',
+      author: 'Matt Haig',
+      price: '38,50',
+      image: require('@/assets/images/biblioteca-meia-noite.png'),
+      route: '/meia-noite2',
+    },
   ];
 
   return (
@@ -49,14 +92,16 @@ export default function TabTwoScreen() {
               <ThemedText type="defaultSemiBold">R$ {book.price}</ThemedText>
               <ThemedText>2x sem juros</ThemedText>
 
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => router.push('/gabriel')}
-              >
+              {/* Botão “Ver detalhes” mantém estilo e função, sem chamada vazia */}
+              <TouchableOpacity style={styles.button}>
                 <ThemedText style={styles.buttonText}>Ver detalhes</ThemedText>
               </TouchableOpacity>
 
-              <ExternalLink href={`https://exemplo.com/remover-${book.title.replace(/\s+/g, '-').toLowerCase()}`}>
+              <ExternalLink
+                href={`https://exemplo.com/remover-${book.title
+                  .replace(/\s+/g, '-')
+                  .toLowerCase()}`}
+              >
                 <ThemedText type="link">Excluir da lista</ThemedText>
               </ExternalLink>
             </View>

@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
 import { Collapsible } from '@/components/ui/collapsible';
@@ -31,8 +32,8 @@ export default function TabTwoScreen() {
       <Collapsible title=" compra ✅">
         <ThemedText>
           você comprou 1 livro
-          <ThemedText type="defaultSemiBold"> livro: Verity</ThemedText>
-          <ThemedText type="defaultSemiBold"> por   R$ 68,90.</ThemedText>
+          <ThemedText type="defaultSemiBold"> livro: A Biblioteca da meia-noite</ThemedText>
+          <ThemedText type="defaultSemiBold"> por   R$ 38,50.</ThemedText>
         </ThemedText>
         <ThemedText>
            <ThemedText type="defaultSemiBold"></ThemedText>
@@ -54,7 +55,7 @@ export default function TabTwoScreen() {
           <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
         <Image
-          source={require('@/assets/images/verity.png')}
+          source={require('@/assets/images/biblioteca-meia-noite.png')}
           style={{ width: 100, height: 100, alignSelf: 'center' }}
         />
         <ExternalLink href="https://reactnative.dev/docs/images">
@@ -63,13 +64,7 @@ export default function TabTwoScreen() {
       </Collapsible>
       <Collapsible title="descrição do livro✅">
         <ThemedText>
-        "Verity", de Colleen Hoover, é um suspense psicológico sobre Lowen Ashleigh,
-         uma escritora contratada para terminar a série de livros da autora Verity Crawford após um acidente.
-          Ao vasculhar os manuscritos de Verity,
-           Lowen encontra um diário que revela segredos perturbadores e chocantes sobre a verdadeira natureza da autora,
-            sua família e o que pode ter acontecido com sua filha. A história combina elementos de suspense, romance e mistério, questionando a
-             verdade por trás das revelações e o que pode estar escondido na mente das pessoas. "
-          <ThemedText type="defaultSemiBold"></ThemedText>
+       O livro segue a história de Nora Seed, uma mulher de 35 anos que, após uma série de eventos trágicos, incluindo a perda de seu emprego e a morte de seu gato, se vê sem propósito e decide acabar com sua vida. No entanto, em vez de morrer, ela é transportada para a Biblioteca da Meia-Noite, um lugar mágico entre a vida e a morte, onde cada livro representa uma versão alternativa de sua vida, baseada nas escolhas que poderia ter feito. Com a ajuda da bibliotecária Mrs. Elm, Nora tem a oportunidade de explorar essas vidas alternativas e descobrir se alguma delas é realmente melhor do que a que ela já viveu.    
         </ThemedText>
       </Collapsible>
       <Collapsible title="agradecimentos✅">

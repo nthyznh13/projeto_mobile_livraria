@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
 import { Collapsible } from '@/components/ui/collapsible';
@@ -31,8 +32,8 @@ export default function TabTwoScreen() {
       <Collapsible title=" compra ✅">
         <ThemedText>
           você comprou 1 livro
-          <ThemedText type="defaultSemiBold"> livro: Verity</ThemedText>
-          <ThemedText type="defaultSemiBold"> por   R$ 68,90.</ThemedText>
+          <ThemedText type="defaultSemiBold"> livro: Assistente do Vilão</ThemedText>
+          <ThemedText type="defaultSemiBold"> por  R$ 47,45.</ThemedText>
         </ThemedText>
         <ThemedText>
            <ThemedText type="defaultSemiBold"></ThemedText>
@@ -54,7 +55,7 @@ export default function TabTwoScreen() {
           <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
         <Image
-          source={require('@/assets/images/verity.png')}
+          source={require('@/assets/images/assistente-vilao.png')}
           style={{ width: 100, height: 100, alignSelf: 'center' }}
         />
         <ExternalLink href="https://reactnative.dev/docs/images">
@@ -63,12 +64,7 @@ export default function TabTwoScreen() {
       </Collapsible>
       <Collapsible title="descrição do livro✅">
         <ThemedText>
-        "Verity", de Colleen Hoover, é um suspense psicológico sobre Lowen Ashleigh,
-         uma escritora contratada para terminar a série de livros da autora Verity Crawford após um acidente.
-          Ao vasculhar os manuscritos de Verity,
-           Lowen encontra um diário que revela segredos perturbadores e chocantes sobre a verdadeira natureza da autora,
-            sua família e o que pode ter acontecido com sua filha. A história combina elementos de suspense, romance e mistério, questionando a
-             verdade por trás das revelações e o que pode estar escondido na mente das pessoas. "
+        Evie Sage, em busca de um emprego para sustentar sua família, acaba esbarrando acidentalmente no temido Vilão de Rennedawn. Sem pensar duas vezes, ela aceita a oferta de trabalho, mesmo sabendo que o ambiente pode ser caótico e sombrio, com cabeças decepadas e globos oculares pelo chão. Ao longo do tempo, Evie começa a desenvolver sentimentos por seu chefe aterrorizante e charmoso, enquanto descobre que alguém está tentando sabotar o império do Vilão. Agora, além de lidar com seus sentimentos, ela precisa proteger seu emprego e desvendar a conspiração.        
           <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
       </Collapsible>
